@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Menú - Abarrotes La Estrella</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.home-button {
+    text-decoration: none;
+    background-color: #145a32;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0e3d22;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.category-title {
+    font-size: 24px;
+    margin: 25px 0 15px;
+    text-align: center;
+    color: black;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-img {
+    width: 80px;
+    margin: 8px auto;
+    display: block;
+}
+
+.price {
+    font-weight: bold;
+    color: green;
+}
+
+.desc {
+    font-size: 13px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.buy-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #2980b9;
+}
+
+/* 🛒 CARRITO */
+.carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 230px;
+    font-size: 14px;
+}
+
+.carrito h3 {
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.carrito button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #2c3e50;
+    color: white;
+}
+
+.carrito button:hover {
+    background: #1a252f;
+}
+</style>
+
+</head>
+
+<body>
+
+<a href="index.html" class="home-button">Inicio</a>
+
+<div class="main-container">
+
+<div class="titulo">
+<h1>Menú</h1>
+<p>Explora nuestros productos y precios</p>
+</div>
+
+<!-- LÁCTEOS -->
+<div class="category-title">Lácteos</div>
+<div class="product-container">
+
+<div class="product-item">
+<h3>Leche (1L)</h3>
+<p class="desc">Rica en calcio y proteínas para una buena alimentación.</p>
+<img src="img/leche.jpg" class="product-img">
+<p class="price">$25</p>
+<button class="buy-button" onclick="agregar('Leche',25)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Yogurt (500g)</h3>
+<p class="desc">Fuente de probióticos que ayudan a la digestión.</p>
+<img src="img/yogurt.jpg" class="product-img">
+<p class="price">$18</p>
+<button class="buy-button" onclick="agregar('Yogurt',18)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Queso (250g)</h3>
+<p class="desc">Ideal para tus comidas, rico en sabor y proteína.</p>
+<img src="img/queso.jpg" class="product-img">
+<p class="price">$35</p>
+<button class="buy-button" onclick="agregar('Queso',35)">Comprar</button>
+</div>
+
+</div>
+
+<!-- BEBIDAS -->
+<div class="category-title">Bebidas</div>
+<div class="product-container">
+
+<div class="product-item">
+<h3>Jugo (1L)</h3>
+<p class="desc">Bebida natural y refrescante para cualquier momento.</p>
+<img src="img/jugo.jpg" class="product-img">
+<p class="price">$30</p>
+<button class="buy-button" onclick="agregar('Jugo',30)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Refresco (600ml)</h3>
+<p class="desc">Bebida gasificada dulce y refrescante.</p>
+<img src="img/refresco.jpg" class="product-img">
+<p class="price">$20</p>
+<button class="buy-button" onclick="agregar('Refresco',20)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Agua (1.5L)</h3>
+<p class="desc">Hidratación pura para todo el día.</p>
+<img src="img/agua mineral.jpg" class="product-img">
+<p class="price">$15</p>
+<button class="buy-button" onclick="agregar('Agua',15)">Comprar</button>
+</div>
+
+</div>
+
+<!-- FRUTAS -->
+<div class="category-title">Frutas</div>
+<div class="product-container">
+
+<div class="product-item">
+<h3>Manzana (1kg)</h3>
+<p class="desc">Fruta dulce y nutritiva, ideal para snack.</p>
+<img src="img/manzanas.jpg" class="product-img">
+<p class="price">$35</p>
+<button class="buy-button" onclick="agregar('Manzana',35)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Plátano (1kg)</h3>
+<p class="desc">Fuente natural de energía y potasio.</p>
+<img src="img/platanos.jpg" class="product-img">
+<p class="price">$25</p>
+<button class="buy-button" onclick="agregar('Plátano',25)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Naranja (1kg)</h3>
+<p class="desc">Rica en vitamina C para fortalecer defensas.</p>
+<img src="img/naranjas.jpg" class="product-img">
+<p class="price">$30</p>
+<button class="buy-button" onclick="agregar('Naranja',30)">Comprar</button>
+</div>
+
+</div>
+
+<!-- LIMPIEZA -->
+<div class="category-title">Limpieza</div>
+<div class="product-container">
+
+<div class="product-item">
+<h3>Detergente</h3>
+<p class="desc">Elimina grasa y suciedad fácilmente.</p>
+<img src="img/deterjente.jpg" class="product-img">
+<p class="price">$30</p>
+<button class="buy-button" onclick="agregar('Detergente',30)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Cloro</h3>
+<p class="desc">Desinfectante potente para el hogar.</p>
+<img src="img/cloro.jpg" class="product-img">
+<p class="price">$15</p>
+<button class="buy-button" onclick="agregar('Cloro',15)">Comprar</button>
+</div>
+
+<div class="product-item">
+<h3>Jabón</h3>
+<p class="desc">Limpieza diaria para ropa y superficies.</p>
+<img src="img/jabon.jpg" class="product-img">
+<p class="price">$12</p>
+<button class="buy-button" onclick="agregar('Jabón',12)">Comprar</button>
+</div>
+
+</div>
+
+</div>
+
+<!-- 🛒 CARRITO -->
+<div class="carrito">
+<h3>Carrito</h3>
+
+<p>Productos: <span id="cantidad">0</span></p>
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="vaciar()">Vaciar</button>
+<button onclick="borrarUltimo()">Borrar último</button>
+<button onclick="pagar()">Pagar</button>
+</div>
+
+<script src="carrito.js"></script>
+
+</body>
+</html>

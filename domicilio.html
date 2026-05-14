@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Domicilio - Abarrotes La Estrella</title>
+    <style>
+        /* Fondo naranja para toda la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f39c12; /* Fondo naranja */
+            margin: 0;
+            padding: 50px 20px;
+            color: #ffffff; /* Texto blanco para contraste */
+        }
+
+        /* Estilo del botón de inicio en la esquina superior izquierda */
+        .inicio-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 15px 30px;
+            background-color: #e67e22;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .inicio-button:hover {
+            background-color: #d35400;
+            transform: scale(1.05);
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h1 {
+            font-size: 36px;
+            color: #ffffff;
+        }
+
+        .titulo p {
+            font-size: 18px;
+            color: #eeeeee; /* Gris suave */
+        }
+
+        /* Contenedor del formulario de solicitud a domicilio */
+        .form-container {
+            background-color: #ffffff; /* Fondo blanco para el contenedor */
+            color: #333333; /* Texto oscuro dentro del contenedor */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            font-size: 28px;
+            color: #f39c12; /* Título naranja */
+            margin-bottom: 20px;
+        }
+
+        .form-container p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Botón de inicio en la esquina superior izquierda -->
+<a href="index.html" class="inicio-button">Inicio</a>
+
+<!-- TÍTULO -->
+<div class="titulo">
+    <h1>A Domicilio</h1>
+    <p>Solicita tu pedido a domicilio</p>
+</div>
+
+<!-- FORMULARIO DE SOLICITUD A DOMICILIO -->
+<div class="form-container">
+    <h2>¡Haz tu pedido a domicilio!</h2>
+    <p>Por favor, ingresa tu dirección y un mensaje si tienes alguna solicitud adicional. Estaremos encantados de llevarte tu pedido.</p>
+
+    <!-- Formulario -->
+    <form action="#" method="POST">
+        <label for="ubicacion">Ingresa tu dirección:</label>
+        <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingresa tu dirección completa" required>
+
+        <label for="mensaje">Mensaje adicional:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Si tienes alguna solicitud especial o comentario..." required></textarea>
+
+        <input type="submit" value="Enviar Pedido">
+    </form>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>&copy; 2026 Abarrotes La Estrella | Todos los derechos reservados</p>
+</div>
+
+</body>
+</html>
