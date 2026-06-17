@@ -12,6 +12,15 @@ function agregar(nombre, precio) {
     }
 
     actualizar();
+
+    // 🟢 ENVIAR A MYSQL (NUEVO)
+    fetch("comprar.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "producto=" + encodeURIComponent(nombre) + "&precio=" + precio
+    });
 }
 
 // 📊 ACTUALIZAR
@@ -50,7 +59,7 @@ function borrarUltimo() {
     actualizar();
 }
 
-// 💳 PAGO (SOLO AQUÍ APARECEN OPCIONES)
+// 💳 PAGO
 function pagar() {
     let total = 0;
 
